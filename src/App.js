@@ -1,13 +1,16 @@
-import './App.css';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
+import gif from './assets/videoEditado.webm';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <div className="video-wrapper">
+        <video src={gif} autoPlay muted loop />
+      </div>
       <Routes>
-        <Route path="/" element={ Home } />
+        <Route path="/" element={<Home />} />
       </Routes>
     </div>
   );
