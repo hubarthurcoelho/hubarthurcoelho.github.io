@@ -6,12 +6,12 @@ import gif from './assets/videoEditado.webm';
 function App() {
   return (
     <div className="App">
-      <div className="video-wrapper">
-        <video src={gif} autoPlay muted loop />
-      </div>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <div className="video-wrapper">
+        <video src={gif} autoPlay muted loop />
+      </div>
     </div>
   );
 }
