@@ -1,13 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
+import logo from '../assets/logobgwhite.png';
 
-function Header() {
+function Header({ constrainDiv }) {
   return (
     <div className="header-container">
-      <header>
+      <motion.header
+        animate={{ x: [-4000, 0] }}
+        transition={{
+          duration: 0.5,
+        }}
+      >
+        <motion.div
+          animate={{ rotate: [360, 720] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'reverse',
+            duration: 50,
+          }}
+        >
+          <motion.img
+            drag
+            dragSnapToOrigin
+            dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
+            className="logo"
+            src={logo}
+            alt="logo"
+          />
+        </motion.div>
         <motion.div
           drag
+          dragElastic={0.2}
           dragSnapToOrigin
+          dragConstraints={constrainDiv}
           dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
         >
           <motion.button
@@ -21,7 +47,7 @@ function Header() {
             type="button"
           >
             <motion.p
-              animate={{ rotate: [2, -2], y: [-1, 1], x: [1, -1] }}
+              animate={{ rotate: [1, -1], y: [-2, 2], x: [1, -1] }}
               transition={{
                 repeat: Infinity,
                 repeatType: 'reverse',
@@ -49,7 +75,7 @@ function Header() {
             type="button"
           >
             <motion.p
-              animate={{ rotate: [-1, 1], y: [1, -1], x: [1, -1] }}
+              animate={{ rotate: [0.6, -0.6], y: [2, -2], x: [1, -1] }}
               transition={{
                 repeat: Infinity,
                 repeatType: 'reverse',
@@ -77,7 +103,7 @@ function Header() {
             type="button"
           >
             <motion.p
-              animate={{ rotate: [-1, 1], y: [-1.5, 1.5], x: [1, -1] }}
+              animate={{ rotate: [-0.5, 0.5], y: [2, -2], x: [1, -1] }}
               transition={{
                 repeat: Infinity,
                 repeatType: 'reverse',
@@ -89,9 +115,13 @@ function Header() {
             </motion.p>
           </motion.button>
         </motion.div>
-      </header>
+      </motion.header>
     </div>
   );
 }
 
 export default Header;
+
+Header.propTypes = {
+  constrainDiv: PropTypes.shape({}).isRequired,
+};
