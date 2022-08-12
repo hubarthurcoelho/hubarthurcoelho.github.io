@@ -1,34 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// import PropTypes from 'prop-types';
 import logo from '../assets/logobgwhite.png';
 
 function Header() {
   return (
     <div className="header-container">
-      <motion.header
+      <motion.div
+        className="logo-container"
         animate={{ x: [-4000, 0] }}
         transition={{
-          duration: 0.5,
+          duration: 1,
+          delay: 1,
         }}
       >
-        <motion.div
-          animate={{ rotate: [360, 720] }}
+        <motion.img
+          drag
+          dragSnapToOrigin
+          dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
+          animate={{ y: [-2, 2] }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 50,
+            duration: 2,
           }}
-        >
-          <motion.img
-            drag
-            dragSnapToOrigin
-            dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
-            className="logo"
-            src={logo}
-            alt="logo"
-          />
-        </motion.div>
+          className="logo"
+          src={logo}
+          alt="logo"
+        />
+      </motion.div>
+      <motion.header
+        animate={{ x: [-4000, 0] }}
+        transition={{
+          duration: 1,
+          delay: 0.5,
+        }}
+      >
         <motion.div
           drag
           dragSnapToOrigin

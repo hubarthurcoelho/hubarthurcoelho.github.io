@@ -11,6 +11,7 @@ body {
 }
 
 .astronaut {
+  display: flex;
   width: 25%;
   height: 50vh;
 }
@@ -41,9 +42,29 @@ header {
   padding: 20px;
 }
 
+.hello-text {
+  font-family: monospace;
+  font-size: 22px;
+  letter-spacing: 2.5px;
+  font-weight: 500px;
+  color: white;
+}
+
+.message {
+  font-family: monospace;
+  font-size: 20px;
+  letter-spacing: 2.5px;
+  font-weight: 500px;
+  color: white;
+}
+
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+.logo-container {
+  margin: 20px;
 }
 
 .nav-links {
