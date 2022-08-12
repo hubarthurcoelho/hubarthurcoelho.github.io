@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import gif from './assets/videoEditado.webm';
+import gif from './assets/videoEditadomp4.mp4';
 
 function App() {
   return (

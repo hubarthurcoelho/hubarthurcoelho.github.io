@@ -27,6 +27,7 @@ function Home() {
           <motion.img
             drag
             dragSnapToOrigin
+            dragConstraints={mainRef}
             dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
             src={astronaut}
             alt="astronaut"

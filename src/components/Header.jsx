@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import logo from '../assets/logobgwhite.png';
 
-function Header({ constrainDiv }) {
+function Header() {
   return (
     <div className="header-container">
       <motion.header
@@ -31,9 +31,7 @@ function Header({ constrainDiv }) {
         </motion.div>
         <motion.div
           drag
-          dragElastic={0.2}
           dragSnapToOrigin
-          dragConstraints={constrainDiv}
           dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
         >
           <motion.button
@@ -122,6 +120,6 @@ function Header({ constrainDiv }) {
 
 export default Header;
 
-Header.propTypes = {
-  constrainDiv: PropTypes.shape({}).isRequired,
-};
+// Header.propTypes = {
+//   constrainDiv: PropTypes.shape({}).isRequired,
+// };
