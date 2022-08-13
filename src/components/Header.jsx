@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import logo from '../assets/logobgwhite.png';
+import { MyContext } from '../context/MyProvider';
 
 function Header() {
+  const { setDisplay } = useContext(MyContext);
+
   return (
     <div className="header-container">
       <motion.div
@@ -49,6 +52,7 @@ function Header() {
             }}
             className="nav-links"
             type="button"
+            onTap={() => setDisplay('about')}
           >
             <motion.p
               animate={{ rotate: [1, -1], y: [-2, 2], x: [1, -1] }}
@@ -77,6 +81,7 @@ function Header() {
             }}
             className="nav-links"
             type="button"
+            onTap={() => setDisplay('projects')}
           >
             <motion.p
               animate={{ rotate: [0.6, -0.6], y: [2, -2], x: [1, -1] }}
@@ -105,6 +110,7 @@ function Header() {
             }}
             className="nav-links"
             type="button"
+            onTap={() => setDisplay('contact')}
           >
             <motion.p
               animate={{ rotate: [-0.5, 0.5], y: [2, -2], x: [1, -1] }}

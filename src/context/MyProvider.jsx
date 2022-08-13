@@ -1,13 +1,19 @@
 /* eslint-disable linebreak-style */
 import PropTypes from 'prop-types';
-import React, { createContext } from 'react';
+import React, { createContext, useMemo, useState } from 'react';
 
-const MyContext = createContext();
-const initialState = { display: 'astronaut' };
+export const MyContext = createContext();
 
 export default function MyProvider({ children }) {
+  const [display, setDisplay] = useState('about');
+
+  const state = useMemo(() => ({
+    display,
+    setDisplay,
+  }), [display, setDisplay]);
+
   return (
-    <MyContext.Provider value={initialState}>
+    <MyContext.Provider value={state}>
       {children}
     </MyContext.Provider>
   );
