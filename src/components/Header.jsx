@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+
 import React, { useContext, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logobgwhite.png';
@@ -160,7 +162,3 @@ function Header() {
 }
 
 export default Header;
-
-// Header.propTypes = {
-//   constrainDiv: PropTypes.shape({}).isRequired,
-// };

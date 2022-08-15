@@ -128,3 +128,27 @@ main {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+/* contact page */
+
+.contact-page {
+  display: flex;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+}
+
+.form label {
+  color: white;
+}
+
+.form label input, .form label textarea {
+  color: black;
+}
+
+.submit-btn {
+  color: white;
+}

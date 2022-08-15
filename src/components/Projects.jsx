@@ -1,5 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable linebreak-style */
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { motion } from 'framer-motion';
 import dragonsPit from '../assets/dragonsPitThumb.png';
