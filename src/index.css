@@ -8,9 +8,11 @@
 
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 .astronaut {
+  position: absolute;
   display: flex;
   width: 25%;
   height: 50vh;
@@ -88,5 +90,41 @@ main {
   position: fixed;
   top: 0;
   left: 0;
+  justify-content: flex-start;
+}
+
+/* projects CSS */
+
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  justify-content: center;
+  align-items: center;
+}
+
+.fetch-astronaut {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+}
+
+.projects-container {
+  display: flex;
+  overflow: visible;
+  width: 25%;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-container h1, .projects-container p {
+  color: white;
+}
+
+.project-card {
+  display: flex;
+  overflow: visible;
+  flex-direction: column;
   justify-content: flex-start;
 }

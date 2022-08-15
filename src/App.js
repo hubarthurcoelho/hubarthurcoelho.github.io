@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import gif from './assets/videoEditadomp4.mp4';
+import gif from './assets/universeLoop.mp4';
 import MyProvider from './context/MyProvider';
 
 function App() {
