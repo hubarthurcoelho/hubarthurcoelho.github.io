@@ -10,7 +10,8 @@ export default function Astronaut() {
       <motion.div
         animate={{ x: [-4000, 0] }}
         transition={{
-          duration: 1,
+          duration: 2,
+          delay: 1,
         }}
       >
         <motion.div
@@ -50,7 +51,7 @@ export default function Astronaut() {
           animate={{ opacity: 1, y: [30, 0], x: [0, 30] }}
           transition={{
             duration: 1,
-            delay: 1.5,
+            delay: 3,
           }}
         >
           <h1 className="hello-text">Hello World!</h1>
