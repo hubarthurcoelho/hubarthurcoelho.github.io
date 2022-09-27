@@ -22,7 +22,7 @@ export default function Projects() {
         {/* INICIO DRAGONS PIT */}
         <motion.a
           rel="noreferrer"
-          href="hubarthurcoelho.github.io/dragons-pit"
+          href="https://hubarthurcoelho.github.io/dragons-pit"
           target="_blank"
           whileHover={{
             scale: 1.05,
@@ -50,7 +50,7 @@ export default function Projects() {
         {/* INICIO SNAKE GAME */}
         <motion.a
           rel="noreferrer"
-          href="hubarthurcoelho.github.io/snake-game"
+          href="https://hubarthurcoelho.github.io/snake-game"
           target="_blank"
           whileHover={{
             scale: 1.05,
