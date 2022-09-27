@@ -126,6 +126,7 @@ main {
   display: flex;
   overflow: visible;
   flex-direction: column;
+  padding: 20px;
   justify-content: flex-start;
 }
 

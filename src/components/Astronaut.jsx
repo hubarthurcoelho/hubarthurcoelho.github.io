@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { motion } from 'framer-motion';
