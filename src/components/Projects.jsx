@@ -8,10 +8,9 @@ import astronaut from '../assets/astronaut.png';
 
 export default function Projects() {
   return (
-    <div className="projects-page">
+    <motion.div className="projects-page">
       <motion.div
         key="modal3"
-        exit={{ x: [0, 4000], opacity: [1, 0], transition: { duration: 2, delay: 1.5 } }}
         className="projects-container"
         animate={{ x: [-4000, 0] }}
         transition={{
@@ -31,6 +30,7 @@ export default function Projects() {
           <motion.div
             className="project-card"
             animate={{ y: [-2, -1, 0, 1, 2] }}
+            exit={{ x: [0, 4000], opacity: [1, 0], transition: { duration: 2, delay: 1.5 } }}
             transition={{
               repeat: Infinity,
               repeatType: 'reverse',
@@ -59,6 +59,7 @@ export default function Projects() {
           <motion.div
             className="project-card"
             animate={{ y: [-2, -1, 0, 1, 2] }}
+            exit={{ x: [0, 4000], opacity: [1, 0], transition: { duration: 2, delay: 1.5 } }}
             transition={{
               repeat: Infinity,
               repeatType: 'reverse',
@@ -87,6 +88,6 @@ export default function Projects() {
       >
         <img src={astronaut} alt="astronaut" />
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

@@ -44,7 +44,6 @@ export default function Astronaut() {
           duration: 0.3,
         }}
       >
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [30, 0], x: [0, 30] }}
