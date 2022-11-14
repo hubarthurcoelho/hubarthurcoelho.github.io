@@ -38,7 +38,7 @@ function Header() {
       </motion.div>
       <AnimatePresence>
         {showHeader && (
-        <motion.header>
+        <motion.header className="menu-container">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ x: [-100, 0], y: [-100, 0], opacity: 1 }}

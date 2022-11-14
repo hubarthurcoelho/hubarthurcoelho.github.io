@@ -2,8 +2,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import astronaut from '../assets/astronaut.png';
+import useDeviceWidth from '../hooks/useDeviceWidth';
 
 export default function Astronaut() {
+  const [deviceWidth] = useDeviceWidth();
+  console.log(deviceWidth);
   return (
     <motion.div className="astronaut">
       <motion.div
