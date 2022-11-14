@@ -14,8 +14,8 @@ body {
 .astronaut {
   position: absolute;
   display: flex;
-  width: 25%;
-  height: 50vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-wrapper {
@@ -60,6 +60,10 @@ header {
   color: white;
 }
 
+.job-info {
+  margin-top: 20px;
+}
+
 .logo {
   width: 150px;
   height: 150px;
@@ -90,29 +94,135 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .menu-container {
   display: flex;
-  width: 100%;
   margin: 0;
   padding: 0;
-
+  margin-right: 20px;
 }
 
-@media(max-width: 600px) {
+.motion-intro-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.introduction-container {
+  position: relative;
+  right: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.introduction-container p {
+  margin-bottom: 3px;
+}
+
+.warning {
+  margin-top: 20px;
+  white-space: nowrap;
+  font-size: 15px;
+  text-decoration: line-through;
+}
+
+@media(max-width: 540px) {
   .logo {
     width: 100px;
     height: 100px;
   }
 
   .nav-links {
-    font-family: monospace;
     font-size: 15px;
     margin-right: 10px;
     letter-spacing: 1.5px;
-    font-weight: 400px;
+  }
+
+  .astronaut {
+    width: 350px;
+    flex-direction: column;
+  }
+
+  .introduction-container {
+    width: 100%;
+  }
+
+  .menu-container {
+    display: flex;
+    width: 300px;
+  }
+
+  .message {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+}
+
+@media(min-width: 541px) {
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .nav-links {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .astronaut {
+    width: 500px;
+    flex-direction: column;
+  }
+
+  .astronaut img {
+    width: 350px;
+    flex-direction: column;
+  }
+
+  .header-container {
+    width: 550px;
+  }
+
+  .menu-container {
+    margin-left: 80px;
+  }
+
+  .menu-container p {
+    margin: 0 10px;
+  }
+
+  .introduction-container {
+    width: 100%;
+  }
+}
+
+@media(min-width: 1280px) {
+  .logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .nav-links {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+    margin: 30px;
+  }
+
+  .astronaut {
+    width: 800px;
+    flex-direction: row;
+  }
+
+  .astronaut img {
+    width: 500px;
+  }
+
+  .menu-container {
+    width: 500px;
   }
 }
 
