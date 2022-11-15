@@ -1,9 +1,12 @@
 /* eslint-disable linebreak-style */
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import propTypes from 'prop-types';
+import { MyContext } from '../context/MyProvider';
 
 export default function ProjectCard({ project }) {
+  const { language } = useContext(MyContext);
+
   return (
     <motion.a
       rel="noreferrer"
@@ -27,8 +30,8 @@ export default function ProjectCard({ project }) {
           src={project.image}
           alt={project.alt}
         />
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
+        <h1>{project[language].title}</h1>
+        <p>{project[language].description}</p>
       </motion.div>
     </motion.a>
   );

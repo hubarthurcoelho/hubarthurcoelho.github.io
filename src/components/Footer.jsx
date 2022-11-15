@@ -4,8 +4,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { motion } from 'framer-motion';
+import Languages from './Languages';
+import useDeviceWidth from '../hooks/useDeviceWidth';
 
 export default function Footer() {
+  const [deviceWidth] = useDeviceWidth();
+
   return (
     <motion.footer
       className="contact-links"
@@ -86,6 +90,9 @@ export default function Footer() {
           <WhatsAppIcon />
         </motion.div>
       </motion.a>
+      { deviceWidth <= 540 ? (
+        <Languages className="languages" />
+      ) : null}
     </motion.footer>
   );
 }
