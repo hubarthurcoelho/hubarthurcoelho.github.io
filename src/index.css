@@ -531,4 +531,8 @@ main {
     width: 500px;
     margin-left: 20px;
   }
+
+  .contact-page {
+    height: 60vh;
+  }
 }

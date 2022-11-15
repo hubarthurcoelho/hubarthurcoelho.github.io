@@ -13,42 +13,20 @@ export default function Projects() {
   const ids = projects.map((project) => project.id);
   const [deviceWidth] = useDeviceWidth();
   const [currentId, setCurrentId] = useState(1);
-  const [prevId, setPrevId] = useState(ids[ids.length - 1]);
-  const [nextId, setNextId] = useState(2);
 
-  const backArrow = () => {
-    if (currentId === 1) {
+  const navigateBack = () => {
+    if (currentId - 1 === 0) {
       setCurrentId(ids[ids.length - 1]);
-      setPrevId(ids[ids.length - 2]);
-      setNextId(1);
       return;
     }
-    if (currentId === 2) {
-      setCurrentId(1);
-      setPrevId(ids[ids.length - 1]);
-      setNextId(2);
-      return;
-    }
-    setPrevId(currentId - 2);
-    setNextId(currentId);
     setCurrentId(currentId - 1);
   };
 
-  const nextArrow = () => {
+  const navigateForward = () => {
     if (currentId === ids[ids.length - 1]) {
-      setPrevId(currentId);
-      setNextId(2);
       setCurrentId(1);
       return;
     }
-    if (currentId === ids[ids.length - 2]) {
-      setPrevId(currentId);
-      setNextId(1);
-      setCurrentId(ids[ids.length - 1]);
-      return;
-    }
-    setPrevId(currentId);
-    setNextId(currentId + 2);
     setCurrentId(currentId + 1);
   };
 
@@ -62,9 +40,18 @@ export default function Projects() {
 
   return (
     <motion.div className="projects-page">
-      <a href={`#${prevId}`} onClick={backArrow}>
+      <motion.a
+        exit={{ x: [0, 4000], opacity: [1, 0], transition: { duration: 2, delay: 1.5 } }}
+        animate={{ x: [-4000, 0] }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        href={`#${currentId}`}
+        onClick={navigateBack}
+      >
         <NavigateBeforeIcon className="navigate-arrows" />
-      </a>
+      </motion.a>
       <motion.div
         key="modal3"
         exit={{ x: [0, 4000], opacity: [1, 0], transition: { duration: 2, delay: 1.5 } }}
@@ -90,9 +77,18 @@ export default function Projects() {
       >
         <img src={astronaut} alt="astronaut" />
       </motion.div>
-      <a href={`#${nextId}`} onClick={nextArrow}>
+      <motion.a
+        exit={{ x: [0, 4000], opacity: [1, 0], transition: { duration: 2, delay: 1.5 } }}
+        animate={{ x: [-4000, 0] }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        href={`#${currentId}`}
+        onClick={navigateForward}
+      >
         <NavigateNextIcon className="navigate-arrows" />
-      </a>
+      </motion.a>
     </motion.div>
 
   );
