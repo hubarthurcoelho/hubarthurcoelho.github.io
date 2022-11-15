@@ -2,12 +2,14 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-console */
 /* eslint-disable linebreak-style */
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import astronaut from '../assets/astronaut.png';
 import contactBackground from '../assets/contactBackground.png';
 import useDeviceWidth from '../hooks/useDeviceWidth';
+import { MyContext } from '../context/MyProvider';
+import languages from '../data/languages';
 
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
@@ -18,6 +20,8 @@ export default function Contact() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [alert, setAlert] = useState('');
+  const { language } = useContext(MyContext);
+  const { contact } = languages[language];
 
   const astronautExit = deviceWidth < 900 ? {
     x: [-1000, 1000], transition: { duration: 3, delay: 0 },
@@ -98,9 +102,9 @@ export default function Contact() {
         onSubmit={sendEmail}
         className="form"
       >
-        <h2>Transmit a message to my spaceship!</h2>
+        <h2>{contact.formHeader}</h2>
         <label htmlFor="name">
-          <p>Name</p>
+          <p>{contact.labelName}</p>
           <input
             type="text"
             name="name"
@@ -110,7 +114,7 @@ export default function Contact() {
           />
         </label>
         <label htmlFor="email">
-          <p>Email</p>
+          <p>{contact.labelEmail}</p>
           <input
             type="email"
             name="email"
@@ -120,7 +124,7 @@ export default function Contact() {
           />
         </label>
         <label htmlFor="message">
-          <p>Message</p>
+          <p>{contact.labelMessage}</p>
           <textarea
             name="message"
             maxLength="155"
@@ -130,7 +134,11 @@ export default function Contact() {
           />
         </label>
         <p className="error-message">{alert}</p>
-        <input type="submit" value="Send" className="submit-btn" />
+        <input
+          type="submit"
+          value={contact.send}
+          className="submit-btn"
+        />
       </motion.form>
       <motion.div
         key="modal7"

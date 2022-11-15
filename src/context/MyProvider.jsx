@@ -6,11 +6,14 @@ export const MyContext = createContext();
 
 export default function MyProvider({ children }) {
   const [display, setDisplay] = useState('about');
+  const [language, setLanguage] = useState('english');
 
   const state = useMemo(() => ({
     display,
     setDisplay,
-  }), [display, setDisplay]);
+    language,
+    setLanguage,
+  }), [display, setDisplay, language, setLanguage]);
 
   return (
     <MyContext.Provider value={state}>

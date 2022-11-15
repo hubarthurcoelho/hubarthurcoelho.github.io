@@ -5,11 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logobgwhite.png';
 import { MyContext } from '../context/MyProvider';
 import useDeviceWidth from '../hooks/useDeviceWidth';
+import languages from '../data/languages';
+import Languages from './Languages';
 
 function Header() {
-  const { setDisplay } = useContext(MyContext);
+  const { setDisplay, language } = useContext(MyContext);
   const [deviceWidth] = useDeviceWidth();
   const [showHeader, setHeader] = useState(true);
+  const { header } = languages[language];
 
   const contactExit = deviceWidth < 900 ? {
     x: [0, -300], y: 50, opacity: 0, transition: { duration: 1 },
@@ -87,7 +90,7 @@ function Header() {
                   duration: 2,
                 }}
               >
-                _ABOUT
+                {header.about}
               </motion.p>
             </motion.button>
 
@@ -124,7 +127,7 @@ function Header() {
                   duration: 2,
                 }}
               >
-                _PROJECTS
+                {header.projects}
               </motion.p>
             </motion.button>
           </motion.div>
@@ -161,14 +164,16 @@ function Header() {
                   duration: 2,
                 }}
               >
-                _CONTACT
-
+                {header.contact}
               </motion.p>
             </motion.button>
           </motion.div>
         </motion.header>
         )}
       </AnimatePresence>
+      { deviceWidth > 1280 ? (
+        <Languages className="languages-header" />
+      ) : null}
     </div>
   );
 }
