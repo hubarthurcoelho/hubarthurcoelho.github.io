@@ -4,10 +4,24 @@ import React, { useContext, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logobgwhite.png';
 import { MyContext } from '../context/MyProvider';
+import useDeviceWidth from '../hooks/useDeviceWidth';
 
 function Header() {
   const { setDisplay } = useContext(MyContext);
+  const [deviceWidth] = useDeviceWidth();
   const [showHeader, setHeader] = useState(true);
+
+  const contactExit = deviceWidth < 900 ? {
+    x: [0, -300], y: 50, opacity: 0, transition: { duration: 1 },
+  } : {
+    x: [0, -500], y: 50, opacity: 0, transition: { duration: 1 },
+  };
+
+  const projectExit = deviceWidth < 900 ? {
+    x: [0, -150], opacity: 0, transition: { duration: 1 },
+  } : {
+    x: [0, -250], opacity: 0, transition: { duration: 1 },
+  };
 
   return (
     <div className="header-container">
@@ -38,7 +52,7 @@ function Header() {
       </motion.div>
       <AnimatePresence>
         {showHeader && (
-        <motion.header>
+        <motion.header className="menu-container">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ x: [-100, 0], y: [-100, 0], opacity: 1 }}
@@ -51,9 +65,9 @@ function Header() {
             dragTransition={{ bounceStiffness: 10, bounceDamping: 10 }}
           >
             <motion.button
-              key="projects"
+              key="about"
               exit={{
-                x: [0, -100], y: -100, opacity: 0, transition: { duration: 1 },
+                x: [0, -100], y: -50, opacity: 0, transition: { duration: 1 },
               }}
               whileHover={{
                 scale: 1.25,
@@ -91,7 +105,7 @@ function Header() {
           >
             <motion.button
               key="projects"
-              exit={{ x: [0, -250], opacity: 0, transition: { duration: 1 } }}
+              exit={projectExit}
               whileHover={{
                 scale: 1.25,
               }}
@@ -128,9 +142,7 @@ function Header() {
           >
             <motion.button
               key="contact"
-              exit={{
-                x: [0, -600], y: 100, opacity: 0, transition: { duration: 1 },
-              }}
+              exit={contactExit}
               whileHover={{
                 scale: 1.25,
               }}

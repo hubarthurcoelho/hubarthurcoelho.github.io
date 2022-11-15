@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -38,6 +39,7 @@ export default function Astronaut() {
       </motion.div>
 
       <motion.div
+        className="motion-intro-container"
         key="modal2"
         exit={{ opacity: 0 }}
         transition={{
@@ -45,6 +47,7 @@ export default function Astronaut() {
         }}
       >
         <motion.div
+          className="introduction-container"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [30, 0], x: [0, 30] }}
           transition={{
@@ -52,8 +55,12 @@ export default function Astronaut() {
             delay: 3,
           }}
         >
-          <h1 className="hello-text">Hello World!</h1>
-          <h2 className="message">This is still a work in progress...</h2>
+          <h1 className="hello-text">{`${'<Hello world! />'}`}</h1>
+          <h2 className="message">My name is Arthur Coelho,</h2>
+          <p className="message">I'm a front end developer.</p>
+          <p className="message job-info">My goal is to create responsive, easy-to-use, intuitive websites!</p>
+          <p className="message">Feel free to explore!</p>
+          {/* <p className="message warning">{`${'(⚠️But be aware of space-pirates)'}`}</p> */}
         </motion.div>
 
       </motion.div>
