@@ -3,11 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import astronaut from '../assets/astronaut.png';
-import useDeviceWidth from '../hooks/useDeviceWidth';
 
 export default function Astronaut() {
-  const [deviceWidth] = useDeviceWidth();
-  console.log(deviceWidth);
   return (
     <motion.div className="astronaut">
       <motion.div
@@ -61,7 +58,7 @@ export default function Astronaut() {
           <h1 className="hello-text">{`${'<Hello world! />'}`}</h1>
           <h2 className="message">My name is Arthur Coelho,</h2>
           <p className="message">I'm a front end developer.</p>
-          <p className="message job-info">My job is to create responsive, easy-to-use, intuitive websites!</p>
+          <p className="message job-info">My goal is to create responsive, easy-to-use, intuitive websites!</p>
           <p className="message">Feel free to explore!</p>
           {/* <p className="message warning">{`${'(⚠️But be aware of space-pirates)'}`}</p> */}
         </motion.div>

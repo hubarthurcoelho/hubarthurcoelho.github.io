@@ -6,9 +6,19 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import astronaut from '../assets/astronaut.png';
 import contactBackground from '../assets/contactBackground.png';
+import useDeviceWidth from '../hooks/useDeviceWidth';
 
 export default function Contact() {
   const form = useRef();
+  const [deviceWidth] = useDeviceWidth();
+
+  const astronautExit = deviceWidth < 900 ? {
+    x: [-1000, 1000], transition: { duration: 3, delay: 0 },
+  } : {
+    x: [-2000, 2000], transition: { duration: 3, delay: 0 },
+  };
+
+  const astronautEntrance = deviceWidth < 900 ? { x: [-1500, 1500] } : { x: [-4000, 4000] };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -66,8 +76,8 @@ export default function Contact() {
       <motion.div
         key="modal7"
         className="fetch-astronaut"
-        exit={{ x: [-2000, 2000], transition: { duration: 3, delay: 0 } }}
-        animate={{ x: [-4000, 4000] }}
+        exit={astronautExit}
+        animate={astronautEntrance}
         transition={{
           duration: 6,
         }}
