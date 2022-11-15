@@ -171,7 +171,7 @@ function Header() {
         </motion.header>
         )}
       </AnimatePresence>
-      { deviceWidth > 540 ? (
+      { deviceWidth > 1280 ? (
         <Languages className="languages-header" />
       ) : null}
     </div>

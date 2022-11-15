@@ -9,11 +9,12 @@ export default function ProjectCard({ project }) {
 
   return (
     <motion.a
+      id={project.id}
       rel="noreferrer"
       href={project.link}
       target="_blank"
       whileHover={{
-        scale: 1.05,
+        y: -3,
       }}
     >
       <motion.div
@@ -39,10 +40,17 @@ export default function ProjectCard({ project }) {
 
 ProjectCard.propTypes = {
   project: propTypes.shape({
+    id: propTypes.number.isRequired,
     link: propTypes.string.isRequired,
     image: propTypes.string.isRequired,
     alt: propTypes.string.isRequired,
-    title: propTypes.string.isRequired,
-    description: propTypes.string.isRequired,
+    portuguese: propTypes.shape({
+      title: propTypes.string.isRequired,
+      description: propTypes.string.isRequired,
+    }),
+    english: propTypes.shape({
+      title: propTypes.string.isRequired,
+      description: propTypes.string.isRequired,
+    }),
   }).isRequired,
 };

@@ -90,7 +90,7 @@ export default function Footer() {
           <WhatsAppIcon />
         </motion.div>
       </motion.a>
-      { deviceWidth <= 540 ? (
+      { deviceWidth <= 1280 ? (
         <Languages className="languages" />
       ) : null}
     </motion.footer>

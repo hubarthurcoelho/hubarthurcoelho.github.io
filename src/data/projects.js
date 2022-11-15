@@ -4,6 +4,7 @@ import snakeGame from '../assets/snakeGameThumb.png';
 
 export default [
   {
+    id: 1,
     link: 'https://hubarthurcoelho.github.io/dragons-pit',
     english: {
       title: "Dragon's Pit",
@@ -17,6 +18,7 @@ export default [
     alt: 'dragons pit',
   },
   {
+    id: 2,
     link: 'https://hubarthurcoelho.github.io/snake-game',
     english: {
       title: 'Snake Game',

@@ -42,6 +42,7 @@ export default function Astronaut() {
         animate={{ x: [-4000, 0] }}
         transition={{
           duration: 2,
+          delay: 1,
         }}
       >
         <motion.div
@@ -54,6 +55,7 @@ export default function Astronaut() {
         >
           <motion.img
             key="modal"
+            className="astronaut-img"
             exit={{ x: [0, -100, 5000] }}
             transition={{
               duration: 2,
@@ -82,7 +84,7 @@ export default function Astronaut() {
           animate={{ opacity: 1, y: [30, 0], x: [0, 30] }}
           transition={{
             duration: 1,
-            delay: 2,
+            delay: 2.5,
           }}
         >
           <h1 className="hello-text">{about.helloText}</h1>

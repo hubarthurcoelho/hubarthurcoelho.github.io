@@ -11,9 +11,15 @@ body {
   overflow: hidden;
 }
 
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
 .astronaut {
   position: absolute;
+  overflow: hidden;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -189,7 +195,6 @@ main {
   width: 100%;
   display: flex;
   position: absolute;
-  flex-direction: column;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -211,9 +216,12 @@ main {
 
 .projects-container {
   display: flex;
+  overflow: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
   flex-wrap: nowrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .projects-container h1, .projects-container p {
@@ -222,9 +230,10 @@ main {
 
 .project-card {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  padding: 10px;
   justify-content: flex-start;
+  scroll-snap-align: start;
 }
 
 /* contact page */
@@ -327,6 +336,14 @@ main {
   font-size: 24px;
 }
 
+@media(max-width: 700px) {
+  .project-card {
+    width: 80vw;
+    scroll-snap-align: start;
+    padding: 45px;
+  }
+}
+
 @media(max-width: 540px) {
   .logo {
     width: 100px;
@@ -340,7 +357,6 @@ main {
   }
 
   .astronaut {
-    width: 350px;
     flex-direction: column;
   }
 
@@ -359,7 +375,18 @@ main {
   }
 
   .projects-container {
-    width: 90%;
+    width: 380px;
+    scroll-behavior: smooth;
+  }
+
+  .project-card {
+    width: 80vw;
+    scroll-snap-align: start;
+    padding: 17px;
+  }
+
+  .project-card img {
+    width: 80vw;
   }
 
   .projects-page {
@@ -402,6 +429,10 @@ main {
     width: 220px;
   }
 
+  .astronaut-img, .introduction-container {
+    width: 350px;
+  }
+
 }
 
 @media(min-width: 541px) {
@@ -416,13 +447,15 @@ main {
   }
 
   .astronaut {
-    width: 500px;
     flex-direction: column;
   }
 
-  .astronaut img {
+  .astronaut-img {
     width: 350px;
-    flex-direction: column;
+  }
+
+  .introduction-container {
+    width: 500px;
   }
 
   .menu-container {
@@ -433,16 +466,40 @@ main {
     margin: 0;
   }
 
-  .introduction-container {
-    width: 100%;
+  .projects-container {
+    max-width: 600px;
+    width: 600px;
+  }
+
+  .project-card {
+    width: 90vw;
+    max-width: 600px;
+  }
+
+  .project-card img {
+    width: 80vw;
+    object-fit: cover;
+    max-width: 600px;
   }
 
   .projects-container {
-    width: 670px;
+    width: 600px;
   }
 
   .languages-header {
     width: 100px;
+  }
+
+  .languages {
+    width: 85px;
+    bottom: 0;
+    left: 0;
+  }
+
+  .languages div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -459,15 +516,14 @@ main {
   }
 
   .astronaut {
-    width: 900px;
     flex-direction: row;
   }
 
-  .introduction-container {
-    width: 500px;
+  .astronaut-img {
+    width: 400px;
   }
 
-  .astronaut img {
+  .introduction-container {
     width: 500px;
   }
 
