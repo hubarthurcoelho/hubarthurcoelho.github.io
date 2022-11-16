@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import dragonsPit from '../assets/dragonsPitThumb.png';
 import snakeGame from '../assets/snakeGameThumb.png';
+import grokkingAlgorithms from '../assets/grokking-algorithms-thumbnail.PNG';
 
 export default [
   {
@@ -30,5 +31,19 @@ export default [
     },
     image: snakeGame,
     alt: 'snake game',
+  },
+  {
+    id: 3,
+    link: 'https://grokking-algorithms-ac.vercel.app/',
+    english: {
+      title: 'Grokking Algorithms',
+      description: 'My favorite algorithms from the book Grokking Algorithms, by Aditya Bhargava',
+    },
+    portuguese: {
+      title: 'Entendendo Algoritmos',
+      description: 'Meus algoritmos favoritos do livro Entendendo Algoritmos, de Aditya Bhargava',
+    },
+    image: grokkingAlgorithms,
+    alt: 'Grokking Algorithms',
   },
 ];
